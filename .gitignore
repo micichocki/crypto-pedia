@@ -1,0 +1,5 @@
+node_modules/      # Ignoruj katalog node_modules/
+dist/              # Ignoruj katalog dist/ (lub inny katalog wyjściowy)
+*.bundle.js        # Ignoruj pliki .bundle.js (lub inny format plików wynikowych)
+*.bundle.css       # Ignoruj pliki .bundle.css (lub inny format plików wynikowych)
+node_modules
