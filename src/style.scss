@@ -12,7 +12,7 @@ $bg-color3:#FFFFFF;
 body {
   font-family: $font;
   background: $bg-color3;
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
@@ -20,8 +20,7 @@ body {
 nav{
   box-sizing: border-box;
   background-color: $nav-color;
-  height: 2.8em;
-  
+  height: 2.8em;  
   display:flex;
   padding:0.9em 6%;
   
@@ -31,31 +30,30 @@ nav{
     display:flex;
     justify-content: space-between;
     align-content: center;
+    height: 2.3rem;
+    padding: auto 0;
     a{
       margin:0 auto;
       font-size: 1.7em;
-      color: $font-color;
-      text-decoration: none;
-    }
-  }
-}
-
-.middle-nav{
-  div{  
-    height: 2.3rem;
-    padding: auto 0;
-    a{   
       text-align: center;
       width:7rem;
-      background-color: #000000;
+      border:1px solid grey;;
       border-radius: 25px;
-      color: #FFFFFF;
+      color: #000000;
+      text-decoration: none;
+      transition:border 0.3s,color 0.3s;
+      &:hover{
+        border:1px solid #E8AE68;
+        color: #E8AE68;
+      }
     }
   }
 }
 
+
+
 header{
-  background: linear-gradient(90deg, $bg-color1 0%, $bg-color2 35%, $bg-color3 100%);
+  background: linear-gradient(90deg, #E3A587 0%, #E8AE68 35%, #E3A587 100%);
   height:15rem;
   margin-top:20px;
   
@@ -63,34 +61,68 @@ header{
     position:relative;
     top:4rem;
     left:12rem;
-    font-size:6.0rem;
-    color:$font-color;
+    font-size:5.4rem;
+    color:$font-color;   
   }
 }
 
-main{
-  width:70%;
-  height:100em;
-  margin:2em auto;
-  background-color:$bg-color1;
-  .chart-container{
-    margin:auto;
-    height:40%;
-    width:80%;
-  }
+ 
 
   .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
     .crypto-item{
-     
-      height:12rem;
-      width:30%;
-      background-color:#000000;
+      height:30rem;
+      margin:60px 30px;
+      width:28%;
+      border:2px solid grey;
+      border-radius: 25px;
+      transition: border 0.2s;
+      &:hover {
+        border:2px solid #E8AE68;
+      }
+      .crypto-header{
+        display:flex;
+        gap:9%;
+        .crypto-logo{
+          margin-left:27px;
+          margin-top:25px;
+          margin-bottom:25px;
+          width: 16%;
+          height: 14%;
+        }
+        .crypto-name{
+          display:inline-block;
+          width:fit-content;
+          text-align: left; 
+          display: inline;
+          font-size:2.4rem;
+        }
+      }
+      
+      .crypto-text{
+        padding:0.5rem 4rem;
+      }
+      .stock{
+        background: grey;
+        color:white;
+        font-size:1rem;
+        width:61px;
+        height:20px;
+        padding:0 6px;
+        border-radius: 3px;
+        margin:2px 28px;
+      }
     }
   }
-
+  
+    .chart-container{
+      margin:auto;
+      height:40%;
+      width:80%;
+    }
 
   
-}
+

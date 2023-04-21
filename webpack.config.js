@@ -6,7 +6,8 @@ module.exports = {
     entry: { index: path.resolve(__dirname, "src", "index.js") },
     output: {
       path: path.resolve(__dirname, 'dist'), 
-      filename: '[name].js', 
+      filename: '[name].js',
+      assetModuleFilename:'[name][ext]', 
     },
     devServer: {
       hot: true 
@@ -30,6 +31,10 @@ module.exports = {
         {
           test: /\.html$/,
           use: ["html-loader"]
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg)$/i,
+          type:'asset/resource'
         }
       ],
     },

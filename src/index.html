@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bitcoinex</title>
+    <title>CRYPTOZ</title>
   </head>
   <body>
     <nav>
@@ -22,9 +22,33 @@
     </header>
 
     <main>
+      <div class="container">
+        <div class="crypto-item">
+          <div class="crypto-header">
+            <img class="crypto-logo" id="btcImg" />
+            <h3 class="crypto-name">BitCoin - BTC</h3>
+          </div>
+          <div class="stock">Binance</div>
+          <p class="crypto-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+            tempora nihil repellendus. Odit laboriosam fugit et alias ipsa
+            consectetur impedit excepturi praesentium, unde, sequi, harum
+            veritatis hic dignissimos eveniet sit. Nihil pariatur officia esse
+            aperiam sint praesentium nam velit fugit ut labore mollitia dolore,
+            ipsa eos nemo cumque corrupti aspernatur nobis illum hic, reiciendis
+            recusandae amet autem quos. Suscipit, eligendi!
+          </p>
+        </div>
+        <div class="crypto-item"></div>
+        <div class="crypto-item"></div>
+        <div class="crypto-item"></div>
+        <div class="crypto-item"></div>
+        <div class="crypto-item"></div>
+      </div>
+
       <div class="chart">
         <form action="" id="crypto-form">
-          <label for="cars">Choose a crypto</label>
+          <label for="crypto">Choose a crypto</label>
 
           <select name="crypto" id="crypto" form="crypto-form">
             <option value="BTC">Bitcoin</option>
@@ -33,16 +57,6 @@
             <option value="ATM">Atom</option>
           </select>
         </form>
-
-        <div class="container">
-          <div class="crypto-item"></div>
-          <div class="crypto-item"></div>
-          <div class="crypto-item"></div>
-          <div class="crypto-item"></div>
-          <div class="crypto-item"></div>
-          <div class="crypto-item"></div>
-        </div>
-
         <div class="chart-container">
           <canvas id="chart"></canvas>
         </div>

@@ -1,5 +1,9 @@
 import "./style.scss"
 import Chart from 'chart.js/auto'
+import BtcLogo from './imgs/Bitcoin.svg.png'
+
+const btcImg = document.getElementById('btcImg')
+btcImg.src=BtcLogo;
 
 const apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd';
 
