@@ -1,9 +1,32 @@
 import "./style.scss"
 import Chart from 'chart.js/auto'
-import BtcLogo from './imgs/Bitcoin.svg.png'
 
-const btcImg = document.getElementById('btcImg')
+import BtcLogo from './imgs/Bitcoin.svg.png'
+import EthLogo from './imgs/Ethereum.jpg'
+import PolkaLogo from './imgs/polkadot.png'
+import TetherLogo from './imgs/tether.jpg'
+import BinanceCoinLogo from './imgs/binance-coin.png'
+import MaticLogo from './imgs/matic.png'
+
+
+const btcImg = document.getElementById('btcImg');
 btcImg.src=BtcLogo;
+
+const ethImg = document.getElementById('ethImg');
+ethImg.src=EthLogo;
+
+const polkaImg = document.getElementById('dotImg');
+polkaImg.src=PolkaLogo;
+
+const tetherImg = document.getElementById('usdtImg');
+tetherImg.src=TetherLogo;
+
+const binanceCoinImg = document.getElementById('bnbImg');
+binanceCoinImg.src=BinanceCoinLogo;
+
+const MaticImg = document.getElementById('maticImg');
+MaticImg.src=MaticLogo;
+
 
 const apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd';
 
