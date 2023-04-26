@@ -102,7 +102,7 @@ header{
           font-size: 1.6rem;
         }
         #btcImg{
-          margin-top:36px;
+          margin-top:30px;
           margin-bottom:40px;
           padding-left: 12px;
           width: 6rem;
@@ -111,13 +111,13 @@ header{
           
         }
         #ethImg{
-          margin-top:25px;
+          margin-top:20px;
           margin-bottom:40px;
           width:39%;
           height:70%;  
         }
         #dotImg{
-          margin-top:38px;
+          margin-top:30px;
           margin-bottom:40px;
           padding-left: 12px;
           width: 6rem;
@@ -156,16 +156,49 @@ header{
       .crypto-text{
         padding:0.5rem 4rem;
       }
-      .stock{
-        background: grey;
-        color:white;
-        font-size:1rem;
-        width:61px;
-        height:20px;
-        padding:0 6px;
-        border-radius: 3px;
-        margin:2px 28px;
+      .stock-list{
+        flex-direction: row ;
+        .stock{
+          display:inline;
+          gap:5%;
+          background: rgb(236,240,239);
+          color:rgb(91,91,91);
+          font-size:1rem;
+          width:61px;
+          height:20px;
+          font-size: 100%;
+          padding:5px 10px;
+          border-radius: 7px;
+          gap:5%;
+          margin-left:7px;
+        }
+        .first-stock{
+          margin-left:28px;
+        }
       }
+      .text-box{
+        width: 28em; 
+        height: 13.2em; 
+        overflow-y:auto;
+        overflow-x:none;
+        .crypto-text{
+          padding:1.2rem 4rem;
+          font-size:120%;
+        }
+      }
+      
+      .read-more{
+        font-size:110%;
+        margin-left: 34px;
+        text-decoration: none;
+        background: rgb(236,240,239);
+        color:rgb(91,91,91);
+        padding:5px 10px;
+        border-radius: 7px;
+        font-size: 14px;
+
+      }
+      
     }
   }
   .btc:hover{
