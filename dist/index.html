@@ -4,38 +4,162 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bitcoinex</title>
+    <title>CRYPTOPEDIA</title>
   <script defer src="index.js"></script></head>
   <body>
     <nav>
-      <div><a href="">Logo</a></div>
-      <div class="middle-nav">
-        <div><a href="">Sign In</a></div>
-        <div><a href="">Sign Up</a></div>
-      </div>
-
-      <div><a href="">GitHub</a></div>
+      <div class="nav-element"><a href="">Logo </a></div>
+      <div class="nav-element"><a class="arrow" href="">Sign In<p class="arrow"> > </p></a></div>
+      <div class="nav-element"><a class="arrow" href="">Sign Up<p class="arrow"> > </p></a></div>
+      <div class="nav-element"><a href="">GitHub</a></div>
     </nav>
-
-    <header>
-      <h1 class="main-text">CRYPTOZ</h1>
-    </header>
 
     <main>
       <div class="container">
-        <div class="crypto-item">
-          <img class="crypto-logo" href="./imgs/Bitcoin.svg.png"></img>
-          <h3 class="crypto-name">BTC</h3>        
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore tempora nihil repellendus. Odit laboriosam fugit et alias ipsa consectetur impedit excepturi praesentium, unde, sequi, harum veritatis hic dignissimos eveniet sit.
-            Nihil pariatur officia esse aperiam sint praesentium nam velit fugit ut labore mollitia dolore, ipsa eos nemo cumque corrupti aspernatur nobis illum hic, reiciendis recusandae amet autem quos. Suscipit, eligendi!
-          </p>
+        <div class="crypto-item btc">
+          <div class="crypto-header">
+            <img class="crypto-logo" id="btcImg" />
+            <h3 class="crypto-name">Bitcoin</h3>
+            <h4 class="crypto-abbrev">BTC</h4>
+          </div>
+          <p class="where-to-buy">Available on:</p>
+          <div class="stock-list">
+            <div class="stock first-stock">Binance</div>
+            <div class="stock">Coinbase</div>
+            <div class="stock">Kraken</div>
+          </div>
+          <div class="text-box">
+            <p class="crypto-text">
+              Bitcoin is the first cryptocurrency, created in 2009. It's
+              decentralized and operates on a blockchain, with a finite supply
+              of 21 million coins.
+            </p>
+          </div>
+
+          <a class="read-more" href="https://pl.wikipedia.org/wiki/Bitcoin"
+            >Read More</a
+          >
         </div>
-        <div class="crypto-item"></div>
-        <div class="crypto-item"></div>
-        <div class="crypto-item"></div>
-        <div class="crypto-item"></div>
-        <div class="crypto-item"></div>
+
+        <div class="crypto-item eth">
+          <div class="crypto-header">
+            <img class="crypto-logo" id="ethImg" />
+            <h3 class="crypto-name">Ethereum</h3>
+            <h4 class="crypto-abbrev">ETH</h4>
+          </div>
+          <p class="where-to-buy">Available on:</p>
+          <div class="stock-list">
+            <div class="stock first-stock">Binance</div>
+            <div class="stock">Coinbase</div>
+            <div class="stock">Kraken</div>
+          </div>
+          <div class="text-box">
+            <p class="crypto-text">
+              Ethereum is a decentralized platform for building decentralized
+              applications, using smart contracts. It introduced the concept of
+              a programmable blockchain.
+            </p>
+          </div>
+
+          <a class="read-more" href="https://pl.wikipedia.org/wiki/Ethereum"
+            >Read More</a
+          >
+        </div>
+        <div class="crypto-item dot">
+          <div class="crypto-header">
+            <img class="crypto-logo" id="dotImg" />
+            <h3 class="crypto-name">Polkadot</h3>
+            <h4 class="crypto-abbrev">DOT</h4>
+          </div>
+          <p class="where-to-buy">Available on:</p>
+          <div class="stock-list">
+            <div class="stock first-stock">Binance</div>
+            <div class="stock">Kraken</div>
+            <div class="stock">Huobi</div>
+          </div>
+          <div class="text-box">
+            <p class="crypto-text">
+              Polkadot is a multi-chain network that enables interoperability
+              between different blockchains, allowing for seamless communication
+              between them.
+            </p>
+          </div>
+
+          <a
+            class="read-more"
+            href="https://en.wikipedia.org/wiki/Polkadot_(cryptocurrency)"
+            >Read More</a
+          >
+        </div>
+        <div class="crypto-item usdt">
+          <div class="crypto-header">
+            <img class="crypto-logo" id="usdtImg" />
+            <h3 class="crypto-name">Tether</h3>
+            <h4 class="crypto-abbrev">USDT</h4>
+          </div>
+          <p class="where-to-buy">Available on:</p>
+          <div class="stock-list">
+            <div class="stock first-stock">Binance</div>
+            <div class="stock">Huobi</div>
+            <div class="stock">Bitfinex</div>
+          </div>
+          <div class="text-box">
+            <p class="crypto-text">
+              Tether is a stablecoin, pegged to the value of the US dollar. It's
+              designed to provide stability in a volatile cryptocurrency market.
+            </p>
+          </div>
+          <a
+            class="read-more"
+            href="https://en.wikipedia.org/wiki/Tether_(cryptocurrency)"
+            >Read More</a
+          >
+        </div>
+        <div class="crypto-item bnb">
+          <div class="crypto-header">
+            <img class="crypto-logo" id="bnbImg" />
+            <h3 class="crypto-name">Binance Coin</h3>
+            <h4 class="crypto-abbrev">BNB</h4>
+          </div>
+          <p class="where-to-buy">Available on:</p>
+          <div class="stock-list">
+            <div class="stock first-stock">Binance</div>
+          </div>
+          <div class="text-box">
+            <p class="crypto-text">
+              Binance Coin is the native cryptocurrency of the Binance exchange,
+              used to pay for trading fees and other services on the platform.
+            </p>
+          </div>
+          <a class="read-more" href="https://pl.wikipedia.org/wiki/Binance"
+            >Read More</a
+          >
+        </div>
+        <div class="crypto-item matic">
+          <div class="crypto-header">
+            <img class="crypto-logo" id="maticImg" />
+            <h3 class="crypto-name">Polygon</h3>
+            <h4 class="crypto-abbrev">MATIC</h4>
+          </div>
+          <p class="where-to-buy">Available on:</p>
+          <div class="stock-list">
+            <div class="stock first-stock">Binance</div>
+            <div class="stock">Huobi</div>
+            <div class="stock">OKEx</div>
+          </div>
+          <div class="text-box">
+            <p class="crypto-text">
+              Matic Network is a Layer 2 scaling solution for Ethereum, aiming
+              to provide faster and cheaper transactions, while also increasing
+              scalability and user adoption.
+            </p>
+          </div>
+          <a
+            class="read-more"
+            href="https://en.wikipedia.org/wiki/Polygon_(blockchain)"
+            >Read More</a
+          >
+        </div>
       </div>
 
       <div class="chart">
@@ -45,8 +169,10 @@
           <select name="crypto" id="crypto" form="crypto-form">
             <option value="BTC">Bitcoin</option>
             <option value="ETH">Ethereum</option>
+            <option value="DOT">Polkadot</option>
+            <option value="USDT">Tether</option>
             <option value="BNB">BinanceCoin</option>
-            <option value="ATM">Atom</option>
+            <option value="MATIC">Polygon</option>
           </select>
         </form>
         <div class="chart-container">

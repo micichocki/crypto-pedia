@@ -4,22 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRYPTOZ</title>
+    <title>CRYPTOPEDIA</title>
   </head>
   <body>
     <nav>
-      <div><a href="">Logo</a></div>
-      <div class="middle-nav">
-        <div><a href="">Sign In</a></div>
-        <div><a href="">Sign Up</a></div>
+      <div class="nav-element"><a href="">Logo </a></div>
+      <div class="nav-element" id="nav-arrow-element">
+        <a href="">Sign In </a>
+        <img id="dropdown-arrow" class="dropdown-img"  alt="" />
       </div>
-
-      <div><a href="">GitHub</a></div>
+      <div class="nav-element" id="nav-arrow-element">
+        <a href="">Sign Up</a>
+        <img id="dropdown-arrow" class="dropdown-img"  alt="" />
+      </div>
+      <div class="nav-element"><a href="">GitHub</a></div>
     </nav>
-
-    <header>
-      <h1 class="main-text">CRYPTOZ</h1>
-    </header>
 
     <main>
       <div class="container">
@@ -176,8 +175,10 @@
           <select name="crypto" id="crypto" form="crypto-form">
             <option value="BTC">Bitcoin</option>
             <option value="ETH">Ethereum</option>
+            <option value="DOT">Polkadot</option>
+            <option value="USDT">Tether</option>
             <option value="BNB">BinanceCoin</option>
-            <option value="ATM">Atom</option>
+            <option value="MATIC">Polygon</option>
           </select>
         </form>
         <div class="chart-container">

@@ -1,59 +1,70 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:weight@400;700&display=swap");
 
 $font: "Karla", sans-serif;
-$nav-color: #FFFFFF;
-$font-color:#000000;
-$main-color:#FFA69E;
-$bg-color1:#84DCC6;
-$bg-color2:#A5FFD6;
-$bg-color3:#FFFFFF;
+$nav-color: #E8AE68;
+$font-color:rgb(236,240,239);
+$bg-color1:#E8AE68;
+$bg-color2:#E3A587;
+$button-color1:rgb(236,240,239);
+$button-color2:rgb(91,91,91);
 
 
 body {
   font-family: $font;
-  background: $bg-color3;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
 nav{
-  box-sizing: border-box;
-  background-color: $nav-color;
-  height: 2.8em;  
-  display:flex;
-  padding:0.9em 6%;
-  
-  
-  div{
-    flex-grow: 1;
-    display:flex;
-    justify-content: space-between;
-    align-content: center;
-    height: 2.3rem;
-    padding: auto 0;
-    a{
-      margin:0 auto;
-      font-size: 1.7em;
-      text-align: center;
-      width:7rem;
-      border:1px solid grey;;
-      border-radius: 25px;
-      color: #000000;
-      text-decoration: none;
-      transition:border 0.3s,color 0.3s;
-      &:hover{
-        border:1px solid #E8AE68;
-        color: #E8AE68;
-      }
-    }
+box-sizing: border-box;
+display:flex;
+justify-content: center;  
+gap:70px;
+margin-top:30px;
+font-size:22px;
+font-weight: 600;
+.nav-element {
+  width: fit-content;
+  padding-top: 6px;
+  height: 35px;
+  transition: background-color 0.25s;
+  border-radius: 20px;
+  &:hover {
+    background-color: $button-color1;
+  }
+  a {
+    color: $button-color2;
+    text-decoration: none;
+    padding:8px 17px;
+    font-size: 18px;
   }
 }
 
 
 
+.dropdown-img{
+  height: 20px;
+  width:20px;
+  position: relative;
+  top: 5px; 
+  right:15px;
+  transform: rotate(180deg);
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: transform 0.3s ease;
+}
+.unrotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+
+}
 header{
-  background: linear-gradient(90deg, #E3A587 0%, #E8AE68 35%, #E3A587 100%);
+  background: linear-gradient(90deg, $bg-color2 0%, $bg-color1 35%, $bg-color1 100%);
   height:15rem;
   margin-top:20px;
   
@@ -62,7 +73,8 @@ header{
     top:4rem;
     left:12rem;
     font-size:5.4rem;
-    color:$font-color;   
+    color:white;
+    letter-spacing:0px; 
   }
 }
 
@@ -122,7 +134,8 @@ header{
           padding-left: 12px;
           width: 6rem;
           height:6rem;
-          margin-left: 20px;      
+          margin-left: 20px;
+                
         }
         #usdtImg{
           margin-top:22px;
@@ -191,8 +204,8 @@ header{
         font-size:110%;
         margin-left: 34px;
         text-decoration: none;
-        background: rgb(236,240,239);
-        color:rgb(91,91,91);
+        background: $button-color1;
+        color:$button-color2;
         padding:5px 10px;
         border-radius: 7px;
         font-size: 14px;
@@ -202,7 +215,7 @@ header{
     }
   }
   .btc:hover{
-    border:2px solid #E8AE68; 
+    border:2px solid $bg-color1; 
   }
   .eth:hover{
     border:2px solid rgb(84,127,239);  

@@ -7,7 +7,7 @@ import PolkaLogo from './imgs/polkadot.png'
 import TetherLogo from './imgs/tether.jpg'
 import BinanceCoinLogo from './imgs/binance-coin.png'
 import MaticLogo from './imgs/matic.png'
-
+import arrow from './imgs/dropdown-arrow.jpg'
 
 const btcImg = document.getElementById('btcImg');
 btcImg.src=BtcLogo;
@@ -26,6 +26,28 @@ binanceCoinImg.src=BinanceCoinLogo;
 
 const MaticImg = document.getElementById('maticImg');
 MaticImg.src=MaticLogo;
+
+const dropdownArrowImgs = document.querySelectorAll('#dropdown-arrow');
+
+for (const element of dropdownArrowImgs) {
+  element.src = arrow;
+}
+
+const navArrowElement = document.getElementById('nav-arrow-element');
+
+dropdownArrowImgs.forEach(image => {
+  const parentListItem = image.closest('div');
+  
+  parentListItem.addEventListener('mouseover', () => {
+    image.classList.remove('unrotate');
+    image.classList.add('rotate');
+  });
+
+  parentListItem.addEventListener('mouseout', () => {
+    image.classList.remove('rotate');
+    image.classList.add('unrotate');
+  });
+});
 
 
 const apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd';
