@@ -1,10 +1,10 @@
 import "./style.scss"
 import Chart from 'chart.js/auto'
 
-import BtcLogo from './imgs/Bitcoin.svg.png'
-import EthLogo from './imgs/Ethereum.jpg'
+import BtcLogo from './imgs/bitcoin.png'
+import EthLogo from './imgs/ethereum.png'
 import PolkaLogo from './imgs/polkadot.png'
-import TetherLogo from './imgs/tether.jpg'
+import TetherLogo from './imgs/tether.png'
 import BinanceCoinLogo from './imgs/binance-coin.png'
 import MaticLogo from './imgs/matic.png'
 import arrow from './imgs/dropdown-arrow.jpg'

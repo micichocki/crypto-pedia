@@ -21,7 +21,7 @@ box-sizing: border-box;
 display:flex;
 justify-content: center;  
 gap:70px;
-margin-top:30px;
+margin-top:12px;
 font-size:22px;
 font-weight: 600;
 .nav-element {
@@ -60,114 +60,93 @@ font-weight: 600;
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
-
-
 }
-header{
-  background: linear-gradient(90deg, $bg-color2 0%, $bg-color1 35%, $bg-color1 100%);
-  height:15rem;
-  margin-top:20px;
-  
+
+main{
+  width:76%;
+  padding-top: 30px;
+  margin:0 auto;
+  display:flex;
   .main-text{
-    position:relative;
-    top:4rem;
-    left:12rem;
-    font-size:5.4rem;
-    color:white;
-    letter-spacing:0px; 
+    display: flex;
+    flex-direction: column;
+    width:40%;
+    margin-right: 80px;   
+    .welcome-text{
+      font-size:3.5em;
+      margin-bottom: 15px;
+    }
+    .main-paragraph{
+      width:90%;
+      font-size:18px;
+      
+    }
+  }
+
+
+  .chart-container{
+   margin-top:38px;
+    .chart-canvas{
+      flex:1;
+      margin-top:20px;
+      width: 600px;
+      height: 300px;
+      
+    }
   }
 }
-
  
 
-  .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:50px;
+  margin-top:60px;
+
+  
     
     .crypto-item{
-      height:30rem;
-      margin:60px 30px;
-      width:28%;
+      width: 21em; 
+      height: 26em; 
       border:2px solid grey;
       border-radius: 25px;
       transition: border 0.2s;
       
       .crypto-header{
-        height:170px;
+        height:145px;
         display:flex;
         flex-direction: column;
-        gap:1%;
         flex-wrap: wrap;
-        
+        .crypto-logo{
+          width: 6rem;
+          height:5.8rem;
+          margin-top:1.6em;      
+          margin-left: 1em;
+          margin-right: 1.4em;
+          padding-left: 10px;     
+        }      
         .crypto-name{
-          
           display:inline-block;
           text-align: left; 
           display: inline;
-          font-size:2.4rem;
+          font-size:1.6rem;
           margin-bottom: 0;
-          padding-right: 4rem;
+          margin-top:1.8em;
+          padding-right: 4em;
         }
         .crypto-abbrev{
           margin:0;
-          font-size: 1.6rem;
+          font-size: 1.2rem;
         }
-        #btcImg{
-          margin-top:30px;
-          margin-bottom:40px;
-          padding-left: 12px;
-          width: 6rem;
-          height:5.8rem;
-          margin-left: 20px;
-          
-        }
-        #ethImg{
-          margin-top:20px;
-          margin-bottom:40px;
-          width:39%;
-          height:70%;  
-        }
-        #dotImg{
-          margin-top:30px;
-          margin-bottom:40px;
-          padding-left: 12px;
-          width: 6rem;
-          height:6rem;
-          margin-left: 20px;
-                
-        }
-        #usdtImg{
-          margin-top:22px;
-          margin-left:3px;
-          margin-right:-60px;
-          width:37%;
-          height:68%;
-          margin-bottom:40px;     
-        }
-        #bnbImg{
-          margin-top:32px;
-          margin-left:30px;
-          width:22%;
-          height:54%;
-          margin-bottom:40px;     
-          margin-right: 15px;
-        }
-        #maticImg{
-          margin-top:32px;
-          margin-left:30px;
-          width:22%;
-          height:56%;
-          margin-bottom:40px;     
-          margin-right: 15px;
-        }
+       
       }
       .where-to-buy{
         margin-top:0;
-        padding-left:7%
+        padding-left:2em;
       }
       .crypto-text{
-        padding:0.5rem 4rem;
+        padding:0.5em 4em;
       }
       .stock-list{
         flex-direction: row ;
@@ -177,43 +156,41 @@ header{
           background: rgb(236,240,239);
           color:rgb(91,91,91);
           font-size:1rem;
-          width:61px;
-          height:20px;
-          font-size: 100%;
-          padding:5px 10px;
+          padding:0.25em 0.5em;
           border-radius: 7px;
           gap:5%;
-          margin-left:7px;
+          margin-left:0.4em;
         }
         .first-stock{
-          margin-left:28px;
+          margin-left:1.9em;
         }
       }
       .text-box{
-        width: 28em; 
-        height: 13.2em; 
         overflow-y:auto;
         overflow-x:none;
-        .crypto-text{
-          padding:1.2rem 4rem;
-          font-size:120%;
+        width:100%;
+        height:10.4em;
+        margin-bottom:0.2em;
+        
+        .crypto-text{         
+          margin-top:0.7em;
+          margin-bottom:0.4em;
+          padding:0.6em 1.8em ;     
+          font-size:1.1rem;        
         }
-      }
-      
+      }     
       .read-more{
-        font-size:110%;
-        margin-left: 34px;
         text-decoration: none;
         background: $button-color1;
-        color:$button-color2;
-        padding:5px 10px;
-        border-radius: 7px;
-        font-size: 14px;
-
-      }
-      
+        color:$button-color2;      
+        border-radius:7px;
+        padding: 0.25em 0.4em;
+        margin-left:1.8em;
+      }  
     }
   }
+
+  
   .btc:hover{
     border:2px solid $bg-color1; 
   }
@@ -232,11 +209,7 @@ header{
   .matic:hover{
     border:2px solid rgb(146,50,210); 
   }
-    .chart-container{
-      margin:auto;
-      height:40%;
-      width:80%;
-    }
+   
 
   
 
