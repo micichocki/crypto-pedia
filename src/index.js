@@ -104,7 +104,7 @@ function createHoverPopupTrigger(element, popup) {
   }
 }
 
-// Usage example
+
 const cryptoCurrenciesTrigger = document.getElementById("currency-popup-trigger");
 const popupStock = document.getElementById("currency-popup");
 createHoverPopupTrigger(cryptoCurrenciesTrigger, popupStock);
@@ -114,26 +114,23 @@ const popupCompany = document.getElementById("company-popup");
 createHoverPopupTrigger(companyInfoTrigger, popupCompany);
 
 
-
-
 fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
   .then(response => response.json())
   .then(data => {
-    const currencies = data.slice(0, 18); // Get first 20 currencies
-    const currencyList = document.createElement('ul'); // Create list element
-    currencyList.classList.add('column-list'); // Add class for multiple columns
+    const currencies = data.slice(0, 18); 
+    const currencyList = document.createElement('ul'); 
+    currencyList.classList.add('column-list'); 
 
-    // Create list item element for each currency and append to list
+   
     currencies.forEach(currency => {
       const li = document.createElement('li');
       li.textContent = currency.toUpperCase();
       currencyList.appendChild(li);
     });
     
-    const currencyPopup = document.querySelector('#currency-popup'); // Get reference to currency popup element
-    currencyPopup.appendChild(currencyList); // Add list of currencies to currency popup
+    const currencyPopup = document.querySelector('#currency-popup'); 
+    currencyPopup.appendChild(currencyList); 
     
-    // Update text of Stocks link to include the number of currencies
     const cryptoCurrenciesLink = document.querySelector('#cryptoCurrencies');
     cryptoCurrenciesLink.textContent = `Top Currencies (${currencies.length})`;
   })
@@ -157,63 +154,53 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
     cryptoCurrenciesLink.textContent = `Top Currencies (${currencies.length})`;
   });
 
-/*
-const apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd';
 
-const bitcoinData = [28809.23, 30394.19, 29449.09, 30317.15, 30315.98];
+  const bitcoinData = [28809.23, 30394.19, 29449.09, 30317.15, 30315.98];
+  const apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd';
 
-// Get today's date
-const today = new Date();
-
-// Generate labels for the past 4 days in DD.MM format
-const labels = Array.from({length: 4  }, (_, i) => {
-  const date = new Date(today);
-  date.setDate(today.getDate() - i - 1);
-  return `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}`;
-});
-const ctx = document.getElementById('chart').getContext('2d');
-const chart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: labels,
-    datasets: [{
-      label: 'Bitcoin Price (USD)',
-      data: bitcoinData,
-      backgroundColor: 'rgba(75, 192, 192, 0.2)',
-      borderColor: 'rgba(75, 192, 192, 1)',
-      borderWidth: 1
-    }]
-  }
-});
-
-function updateAndStoreData() {
-  // Fetch data from API
+  const today = new Date();
+  
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-      // Update data arrays
-      bitcoinData.push(data.bitcoin.usd);
-      labels.push(new Date().toLocaleString());
-
-      // Keep only the last 10 values
-      if (bitcoinData.length > 10) {
-        bitcoinData.shift();
-        labels.shift();
-      }
-
-      // Update chart data
-      chart.data.labels = labels;
-      chart.data.datasets[0].data = bitcoinData;
-      chart.update();
-
-      // Store data in local storage
-      localStorage.setItem('bitcoinData', JSON.stringify(bitcoinData));
-      localStorage.setItem('labels', JSON.stringify(labels));
+      const price = data.bitcoin.usd;
+      console.log(price);
     })
-    .catch(error => console.error('Error fetching data from API:', error));
-}
+    .catch(error => {
+      console.error('Error fetching Bitcoin price', error);
+    });
 
-// Call updateAndStoreData() every 35 minutes
-setInterval(updateAndStoreData, 35 * 60 * 1000);
-updateAndStoreData();
-*/
+
+
+
+(async function() {
+  const data = [
+    { year: 2010, count: 10 },
+    { year: 2011, count: 20 },
+    { year: 2012, count: 15 },
+    { year: 2013, count: 25 },
+    { year: 2014, count: 22 },
+    { year: 2015, count: 30 },
+    { year: 2016, count: 28 },
+  ];
+
+  new Chart(
+    document.getElementById('crypto-prices'),
+    {
+      type: 'line',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Acquisitions by year',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+    }
+  );
+})();
+
+  // Call updateAndStoreData() every 35 minutes
+  //setInterval(updateAndStoreData, 35 * 60 * 1000);
+  //updateAndStoreData();

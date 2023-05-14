@@ -16,7 +16,7 @@ body {
   padding: 0;
 }
 
-nav{
+nav{  
 box-sizing: border-box;
 display:flex;
 justify-content: center;  
@@ -84,7 +84,7 @@ font-weight: 600;
 #currency-popup li {
   color: #333;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 0.9em;
   padding: 8px 16px;
   border-radius: 5px;
   transition: background-color 0.2s ease-in-out;
@@ -99,7 +99,7 @@ font-weight: 600;
   display: none;
   position: absolute;
   top: 60px;
-  left: 40%;
+  left: 42%;
   transform: translateX(-50%);
   z-index: 999;
   background-color: #fff;
@@ -128,22 +128,21 @@ font-weight: 600;
 
 #company-popup li:hover {
   background-color: #f5f5f5;
-  cursor: pointer;
 }
 
 .info-img{
   position:relative;
-  top:3px;
+  top:3.5px;
   right:3px;
-  width:22px;
-  height:22px;
+  width:20px;
+  height:20px;
   margin-right: 4px;
 
 }
 
 .column-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 14px;
 }
 
@@ -158,11 +157,15 @@ main{
     display: flex;
     flex-direction: column;
     width:40%;
-    margin-right: 80px;   
+    margin-right: 60px;   
     .welcome-text{
       font-size:3.5em;
       margin-bottom: 15px;
+      .rocket{
+        font-size:0.7em;
+      }
     }
+    
     .main-paragraph{
       width:90%;
       font-size:18px;
@@ -172,13 +175,68 @@ main{
 
 
   .chart-container{
-   margin-top:38px;
+    margin-top:42px;
+    display:flex;
+    flex-direction: column;
+    
+    
+    $height: 36;
+    .select-label{
+      position: relative;
+      display: inline-block;
+       &:before {
+        content: '';
+        height: ($height - 5) + px;
+        position: absolute;
+        right: 7px;
+        top: 3px;
+        width: 22px;
+        background: #fff; 
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        pointer-events: none;
+        display: block;
+      }
+        &:after {
+          content: " ";
+          position: absolute;
+          right: 15px;
+          top: 46%;
+          margin-top: -3px;
+          z-index: 2;
+          pointer-events: none;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 6.9px 4px 0 4px;
+          border-color: #aaa transparent transparent transparent;
+          pointer-events: none;
+      }
+          select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 0 30px 0 10px;
+
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            line-height: $height + px;
+            height: $height + px;
+            //box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+            background: #fff;
+
+            //min-width: 200px;
+            margin: 0 5px 5px 0;
+          }
+    }
+//fix for ie 10 later
+    select::-ms-expand {
+      display: none;
+    }
+   
     .chart-canvas{
-      flex:1;
       margin-top:20px;
-      width: 600px;
-      height: 300px;
-      
+      width: 500px;
     }
   }
 }
@@ -190,8 +248,6 @@ main{
   justify-content: center;
   gap:50px;
   margin-top:60px;
-
-  
     
     .crypto-item{
       width: 21em; 

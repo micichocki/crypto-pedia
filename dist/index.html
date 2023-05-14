@@ -32,9 +32,7 @@
         <a href="#" id="cryptoCurrencies">Top Currencies</a>
         <img id="dropdown-arrow" class="dropdown-img" alt="" />
         <div id="currency-popup">
-          <ul>
-           
-          </ul>
+          
         </div>
       </div>
 
@@ -46,7 +44,9 @@
 
     <main>
       <div class="main-text">
-        <h1 class="welcome-text">Welcome!</h1>
+        <h1 class="welcome-text">Welcome! <span class="rocket"> 🚀
+        </span>
+        </h1>
         <p class="main-paragraph">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi
           voluptatem ipsa iusto obcaecati beatae corporis, nostrum deleniti
@@ -58,8 +58,8 @@
 
       <div class="chart-container">
         <form action="" id="crypto-form">
-          <label for="crypto">Choose a crypto</label>
-
+          <label class="select-label"for="crypto">Choose a crypto: 
+        
           <select name="crypto" id="crypto-list" form="crypto-form">
             <option value="BTC">Bitcoin</option>
             <option value="ETH">Ethereum</option>
@@ -68,9 +68,10 @@
             <option value="BNB">BinanceCoin</option>
             <option value="MATIC">Polygon</option>
           </select>
+        </label>
         </form>
-        <div class="chart-canvas">
-          <canvas id="chart"></canvas>
+        <div class="chart-canvas" >
+         <canvas id="crypto-prices"></canvas>
         </div>
       </div>
     </main>
