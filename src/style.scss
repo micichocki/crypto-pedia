@@ -160,17 +160,48 @@ main{
     margin-right: 60px;   
     .welcome-text{
       font-size:3.5em;
-      margin-bottom: 15px;
+      margin-bottom: 1px;
       .rocket{
         font-size:0.7em;
       }
     }
     
     .main-paragraph{
+      text-align: center;
       width:90%;
-      font-size:18px;
-      
+      font-size:1.1rem;
+      margin-bottom:0.5em;
+      line-height: 1.3em;
+      letter-spacing: 0.2px;
     }
+    .button-text{
+      font-weight: bold;
+    }
+
+    .main-button {
+      display: block;
+      margin-left: 8.8em;
+      width: 5.6em;
+      height: 3em;
+      background-color: rgb(146, 50, 210);
+      border-radius: 25px;
+      border: 1px solid #fff;
+      font-size: 1em;
+      font-weight: bold;
+      text-align: center;
+      line-height: 3em;
+      text-decoration: none;
+    }
+    
+    .main-button:hover {
+      background-color: rgb(126, 40, 190);
+      cursor: pointer;
+    }
+    .main-button-text{
+      text-decoration: none;
+      color: rgb(236,240,239);
+    }
+    
   }
 
 
@@ -222,7 +253,7 @@ main{
             border-radius: 3px;
             line-height: $height + px;
             height: $height + px;
-            //box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
             background: #fff;
 
             //min-width: 200px;
@@ -240,7 +271,55 @@ main{
     }
   }
 }
- 
+
+.form-info{
+  .crypto-logo-form{
+    width: 6rem;
+    height:5.9rem;
+    margin-top:1.2em;      
+    margin-left: 1em;
+    margin-right: 1.8em;
+    padding-left: 10px;
+    padding-right:1em;
+    border-right:1px solid #16222c
+
+  } 
+  margin-top: 1.5em;
+  display:flex;
+  font-size: 1.7rem;
+  background-color: rgb(236,240,239);
+  border-radius: 30px;
+  height: 6em;
+  width:20em;
+  .form-identif{
+
+    margin-top: 1.7em;
+    margin-right: 1.2em;
+    
+    font-weight: bold;
+    display:flex;
+    flex-direction: column;
+    .main-name{
+      display: block;
+    }
+    
+  }
+  .form-stats{
+    font-size: 0.9em;
+    margin-top: 1.2em;
+    width: 7em;
+    height:3.9em;
+    padding-left:1.4em;
+    display:flex;
+    flex-direction: column;
+    gap:4px;
+    border-left:1px solid #16222c
+    
+  }
+}
+
+
+
 
 .container{
   display: flex;
@@ -332,7 +411,11 @@ main{
       }  
     }
   }
-
+  /*
+.card-hover-effect{
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}*/
   
   .btc:hover{
     border:2px solid $bg-color1; 
@@ -354,5 +437,26 @@ main{
   }
    
 
-  
+  .crypto-table{
+    width:70%;
+    height:20em;
+    margin:20px auto;
+    
+    th{
+      font-size: 1.1rem;
+      height:40px;
+      text-decoration: none;
+      background: $button-color1;
+      color:$button-color2;      
+      border-radius:7px;
+    }
+    td{
+      font-size: 1.1rem;
+      height:40px;
+      text-decoration: none;
+      background: $button-color1;
+      color:$button-color2;      
+      border-radius:7px;
+    }
+  }
 

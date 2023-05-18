@@ -8,7 +8,6 @@
   <script defer src="index.js"></script></head>
   <body>
     <nav>
-
       <div class="nav-element">
         <a href="">Sign In</a>
       </div>
@@ -18,12 +17,11 @@
         <img id="dropdown-arrow" class="dropdown-img" alt="" />
         <div id="company-popup">
           <ul>
-            <li><img class="info-img" id="home" alt=""> About Us</li>
-            <li><img class="info-img" id="careers"alt="">Careers</li>
-            <li><img class="info-img" id="customers" alt="">Customers</li>
-            <li><img class="info-img" id="conversation"alt="">Blog</li>
-            <li><img class="info-img" id="faq"alt="">FAQ</li>
-
+            <li><img class="info-img" id="home" alt="" /> About Us</li>
+            <li><img class="info-img" id="careers" alt="" />Careers</li>
+            <li><img class="info-img" id="customers" alt="" />Customers</li>
+            <li><img class="info-img" id="conversation" alt="" />Blog</li>
+            <li><img class="info-img" id="faq" alt="" />FAQ</li>
           </ul>
         </div>
       </div>
@@ -31,56 +29,69 @@
       <div class="nav-element" id="currency-popup-trigger">
         <a href="#" id="cryptoCurrencies">Top Currencies</a>
         <img id="dropdown-arrow" class="dropdown-img" alt="" />
-        <div id="currency-popup">
-          
-        </div>
+        <div id="currency-popup"></div>
       </div>
 
       <div class="nav-element">
         <a href="https://github.com/micichocki">GitHub</a>
       </div>
-
     </nav>
 
     <main>
       <div class="main-text">
-        <h1 class="welcome-text">Welcome! <span class="rocket"> 🚀
-        </span>
-        </h1>
+        <h1 class="welcome-text">Welcome! <span class="rocket"> 🚀 </span></h1>
         <p class="main-paragraph">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi
-          voluptatem ipsa iusto obcaecati beatae corporis, nostrum deleniti
-          aspernatur facere commodi necessitatibus porro aliquam ab delectus
-          perspiciatis amet libero. Dolor, unde. ero provident dolorum.
-          Eligendi, veniam.
-        </p>
+          Discover best-performing cryptocurrencies and explore their
+          dynamic statistics. Dive into the world of Bitcoin, Ethereum, Tether,
+          Binance Coin, Polkadot, MATIC and many more! </p>
+          <div class="main-paragraph button-text">Click below to start your crypto
+            adventure!
+          </div>  
+          
+       
+        <button class="main-button"><a href="#ethImg" class="main-button-text">Check!</a></button>
       </div>
 
       <div class="chart-container">
         <form action="" id="crypto-form">
-          <label class="select-label"for="crypto">Choose a crypto: 
-        
-          <select name="crypto" id="crypto-list" form="crypto-form">
-            <option value="BTC">Bitcoin</option>
-            <option value="ETH">Ethereum</option>
-            <option value="DOT">Polkadot</option>
-            <option value="USDT">Tether</option>
-            <option value="BNB">BinanceCoin</option>
-            <option value="MATIC">Polygon</option>
-          </select>
-        </label>
+          <label class="select-label" for="crypto"
+            >Choose a crypto:
+
+            <select name="crypto" id="crypto-list" form="crypto-form">
+              <option value="BTC">Bitcoin</option>
+              <option value="ETH">Ethereum</option>
+              <option value="DOT">Polkadot</option>
+              <option value="USDT">Tether</option>
+              <option value="BNB">BinanceCoin</option>
+              <option value="MATIC">Polygon</option>
+            </select>
+          </label>
         </form>
+        <div class="form-info">
+          <img id="chosenImg" class="crypto-logo-form" alt="" />
+          <div class="form-identif">
+            <div class="main-name">POLYGON</div>
+            <div class="main-abbrev">MATIC</div>
+          </div>
+          <div class="form-stats">
+            <div>Price: $2</div>
+            <div>ATH: $100</div>
+            <div>VOL: 24000</div>
+          </div>
+        </div>
+
+        <!--
         <div class="chart-canvas" >
          <canvas id="crypto-prices"></canvas>
         </div>
-      </div>
+      --></div>
     </main>
 
     <div class="container">
       <div class="crypto-item btc">
         <div class="crypto-header">
           <img class="crypto-logo" id="btcImg" />
-          <h3 class="crypto-name">Bitcoin</h3>
+          <h3 class="crypto-name" id="button-goto">Bitcoin</h3>
           <h4 class="crypto-abbrev">BTC</h4>
         </div>
         <p class="where-to-buy">Available on:</p>
@@ -115,7 +126,7 @@
           <div class="stock">Kraken</div>
         </div>
         <div class="text-box">
-          <p class="crypto-text">
+          <p class="crypto-text" >
             Ethereum is a decentralized platform for building decentralized
             applications, using smart contracts. It introduced the concept of a
             programmable blockchain.
@@ -222,5 +233,7 @@
         >
       </div>
     </div>
+
+    <div class="crypto-table-container"></div>
   </body>
 </html>

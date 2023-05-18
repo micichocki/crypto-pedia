@@ -1,5 +1,8 @@
 import "./style.scss"
 import Chart from 'chart.js/auto'
+const axios = require('axios');
+
+
 
 import BtcLogo from './imgs/bitcoin.png'
 import EthLogo from './imgs/ethereum.png'
@@ -24,6 +27,9 @@ binanceCoinImg.src=BinanceCoinLogo;
 
 const MaticImg = document.getElementById('maticImg');
 MaticImg.src=MaticLogo;
+
+const ChosenImg = document.getElementById('chosenImg');
+ChosenImg.src=MaticLogo
 
 import conversationLogo from './imgs/conversation.png';
 import customersLogo from './imgs/customers.png';
@@ -136,7 +142,6 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
   })
   .catch(error => {
     console.error(error);
-    // If there's an error, display the basic currencies
     const currencies = ['BTC', 'ETH', 'DOT', 'USDT','BNB','MATIC'];
     const currencyList = document.createElement('ul');
     currencyList.classList.add('column-list');
@@ -155,51 +160,103 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
   });
 
 
-  const bitcoinData = [28809.23, 30394.19, 29449.09, 30317.15, 30315.98];
-  const apiUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd';
 
-  const today = new Date();
+  const endpoint = 'https://rest.coinapi.io/v1/assets';
+  const parameters = '?filter_asset_id=BTC;ETH;DOT;USDT;BNB,MATIC';
   
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      const price = data.bitcoin.usd;
-      console.log(price);
+  const BTCData = { ATHprice: '68744.0314', ATHdate: '2021-11-10' };
+  const ETHData = { ATHprice: '4858.8222', ATHdate: '2021-11-10' };
+  const DOTData = { ATHprice: '5,4282', ATHdate: '2021-11-04' };
+  const USDTData = { ATHprice: '1.149', ATHdate: '2020-03-13' };
+  const BNBData = { ATHprice: '689.3504', ATHdate: '2021-05-10' };
+  const MATICData = { ATHprice: '2.9102', ATHdate: '2021-12-27' };
+  
+  const assetDataMap = {
+    BTC: BTCData,
+    ETH: ETHData,
+    DOT: DOTData,
+    USDT: USDTData,
+    BNB: BNBData,
+    MATIC: MATICData,
+  };
+  
+  const headers = {
+    'X-CoinAPI-Key': process.env.COINAPI_KEY,
+  };
+  
+  const url = endpoint + parameters;
+  
+  axios.get(url, { headers })
+    .then(response => {
+      const tableContainer=document.getElementsByClassName("crypto-table-container")
+      const data = response.data;
+      const table = createCryptoTable(data);
+      tableContainer.appendChild(table);
     })
     .catch(error => {
-      console.error('Error fetching Bitcoin price', error);
+      console.error(error);
     });
-
-
-
-
-(async function() {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
-
-  new Chart(
-    document.getElementById('crypto-prices'),
-    {
-      type: 'line',
-      data: {
-        labels: data.map(row => row.year),
-        datasets: [
-          {
-            label: 'Acquisitions by year',
-            data: data.map(row => row.count)
-          }
-        ]
+  
+  function createCryptoTable(data) {
+    const table = document.createElement('table');
+    table.classList.add('crypto-table');
+  
+    const tableHeader = document.createElement('tr');
+    const headers = ['NAME', 'ID', 'PRICE', 'ATH', 'ATH DATE', 'VOLUME'];
+    headers.forEach(headerText => {
+      const headerCell = document.createElement('th');
+      headerCell.textContent = headerText;
+      tableHeader.appendChild(headerCell);
+    });
+    table.appendChild(tableHeader);
+  
+    data.forEach(item => {
+      const row = document.createElement('tr');
+  
+      const nameCell = document.createElement('td');
+      nameCell.textContent = item.name;
+      row.appendChild(nameCell);
+  
+      const idCell = document.createElement('td');
+      idCell.textContent = item.asset_id;
+      row.appendChild(idCell);
+  
+      const priceCell = document.createElement('td');
+      row.appendChild(priceCell);
+  
+      const athCell = document.createElement('td');
+      if (item.ATHprice) {
+        athCell.textContent = item.ATHprice;
       }
-    }
-  );
-})();
+      row.appendChild(athCell);
+  
+      const athDateCell = document.createElement('td');
+      if (item.ATHdate) {
+        athDateCell.textContent = item.ATHdate;
+      }
+      row.appendChild(athDateCell);
+  
+      const volumeCell = document.createElement('td');
+      row.appendChild(volumeCell);
+  
+      table.appendChild(row);
+    });
+  
+    return table;
+  }
+  
+
+const cryptoCards=document.querySelectorAll(".crypto-item")
+
+cryptoCards.forEach(element=>{
+  element.addEventListener("mouseover",()=>{
+    element.classList.add('card-hover-effect')
+  })
+  element.addEventListener("mouseout", () => {
+    element.classList.remove('card-hover-effect');
+  });
+})
+
 
   // Call updateAndStoreData() every 35 minutes
   //setInterval(updateAndStoreData, 35 * 60 * 1000);
