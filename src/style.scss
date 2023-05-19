@@ -168,8 +168,8 @@ main{
     
     .main-paragraph{
       text-align: center;
-      width:90%;
-      font-size:1.1rem;
+      width:100%;
+      font-size:1.2rem;
       margin-bottom:0.5em;
       line-height: 1.3em;
       letter-spacing: 0.2px;
@@ -256,11 +256,11 @@ main{
             box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
             background: #fff;
 
-            //min-width: 200px;
+            
             margin: 0 5px 5px 0;
           }
     }
-//fix for ie 10 later
+
     select::-ms-expand {
       display: none;
     }
@@ -273,6 +273,13 @@ main{
 }
 
 .form-info{
+  margin-top: 1.5em;
+  display:flex;
+  font-size: 1.7rem;
+  background-color: rgb(236,240,239);
+  border-radius: 30px;
+  height: 6em;
+  width:23em;
   .crypto-logo-form{
     width: 6rem;
     height:5.9rem;
@@ -282,20 +289,11 @@ main{
     padding-left: 10px;
     padding-right:1em;
     border-right:1px solid #16222c
-
   } 
-  margin-top: 1.5em;
-  display:flex;
-  font-size: 1.7rem;
-  background-color: rgb(236,240,239);
-  border-radius: 30px;
-  height: 6em;
-  width:20em;
+  
   .form-identif{
-
     margin-top: 1.7em;
-    margin-right: 1.2em;
-    
+    margin-right: 1.2em; 
     font-weight: bold;
     display:flex;
     flex-direction: column;
@@ -314,8 +312,8 @@ main{
     flex-direction: column;
     gap:4px;
     border-left:1px solid #16222c
-    
   }
+  
 }
 
 
@@ -449,14 +447,20 @@ main{
       background: $button-color1;
       color:$button-color2;      
       border-radius:7px;
+      color:white;
+      background-color: rgb(146, 50, 210);
     }
     td{
+      text-align: center;
       font-size: 1.1rem;
       height:40px;
       text-decoration: none;
       background: $button-color1;
       color:$button-color2;      
       border-radius:7px;
+    }
+    bolder-table-cell{
+      font-weight: bolder;
     }
   }
 
