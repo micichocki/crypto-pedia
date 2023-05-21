@@ -199,54 +199,83 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
       console.error(error);
     });
   
-  function createCryptoTable(data) {
-    const table = document.createElement('table');
-    table.classList.add('crypto-table');
-  
-    const tableHeader = document.createElement('tr');
-    const headers = ['NAME', 'ID', 'PRICE', 'ATH', 'ATH DATE', 'VOLUME'];
-    headers.forEach(headerText => {
-      const headerCell = document.createElement('th');
-      headerCell.textContent = headerText;
-      tableHeader.appendChild(headerCell);
-    });
-    table.appendChild(tableHeader);
-    data.forEach(item => {
-      const row = document.createElement('tr');
-  
-      const nameCell = document.createElement('td');
-      nameCell.textContent = item.name;
-      nameCell.classList.add('bolder-table-cell')
-      row.appendChild(nameCell);
-  
-      const idCell = document.createElement('td');
-      idCell.textContent = item.asset_id;
-      row.appendChild(idCell);
-  
-      const priceCell = document.createElement('td');
-      priceCell.textContent="$"+item.price_usd
-      row.appendChild(priceCell);
-  
-      const athCell = document.createElement('td');
-      athCell.textContent = "$"+assetDataMap[item.asset_id].ATHprice;
-     
-      row.appendChild(athCell);
-  
-      const athDateCell = document.createElement('td');   
-      athDateCell.textContent = assetDataMap[item.asset_id].ATHdate;
-     
-      row.appendChild(athDateCell);
-  
-      const volumeCell = document.createElement('td');
-      volumeCell.textContent=item.volume_1day_usd;
-      row.appendChild(volumeCell);
-  
-      table.appendChild(row);
-    });
-  
-    return table;
-  }
+    function createCryptoTable(data) {
+      const table = document.createElement('table');
+      table.classList.add('crypto-table');
+    
+      const tableHeader = document.createElement('tr');
+      const headers = ['NAME', 'ID', 'PRICE', 'ATH', 'ATH DATE', 'VOLUME'];
+      headers.forEach(headerText => {
+        const headerCell = document.createElement('th');
+        headerCell.textContent = headerText;
+        tableHeader.appendChild(headerCell);
+      });
+      table.appendChild(tableHeader);
+    
+      data.forEach(item => {
+        const row = document.createElement('tr');
+    
+        const nameCell = document.createElement('td');
+        nameCell.classList.add('bolder-table-cell');
+    
+        // Create image element
+        const image = document.createElement('img');
+        image.src = getLogoByAssetId(item.asset_id);
+        image.alt = item.name;
+        image.classList.add('table-img');
+        nameCell.appendChild(image);
+    
+        const nameText = document.createElement('span');
+        nameText.textContent = item.name;
+        nameCell.appendChild(nameText);
+        nameText.classList.add("name-cell")
+    
+        row.appendChild(nameCell);
+    
+        const idCell = document.createElement('td');
+        idCell.textContent = item.asset_id;
+        row.appendChild(idCell);
+    
+        const priceCell = document.createElement('td');
+        priceCell.textContent = "$" + item.price_usd;
+        row.appendChild(priceCell);
+    
+        const athCell = document.createElement('td');
+        athCell.textContent = "$" + assetDataMap[item.asset_id].ATHprice;
+        row.appendChild(athCell);
+    
+        const athDateCell = document.createElement('td');
+        athDateCell.textContent = assetDataMap[item.asset_id].ATHdate;
+        row.appendChild(athDateCell);
+    
+        const volumeCell = document.createElement('td');
+        volumeCell.textContent = item.volume_1day_usd;
+        row.appendChild(volumeCell);
+    
+        table.appendChild(row);
+      });
+    
+      return table;
+    }
 
+  function getLogoByAssetId(assetId) {
+    switch (assetId) {
+      case 'BTC':
+        return BtcLogo;
+      case 'ETH':
+        return EthLogo;
+      case 'DOT':
+        return PolkaLogo;
+      case 'USDT':
+        return TetherLogo;
+      case 'BNB':
+        return BinanceCoinLogo;
+      case 'MATIC':
+        return MaticLogo;
+      default:
+        return '';
+    }
+  }
   function appendDataToMainDisplay(data) {
     const cryptoDropDown = document.getElementById("crypto-list");
     
@@ -266,7 +295,7 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
           formAbbrev.textContent = "BTC";
           formPrice.textContent = "Price: $" + parseFloat(data[0].price_usd).toFixed(2);
           formAth.textContent = "ATH: $" + parseFloat(BTCData.ATHprice).toFixed(2);
-          formDiff.textContent = "DIFF: - " + parseFloat((1 - data[0].price_usd / BTCData.ATHprice)).toFixed(2) + "%";
+          formDiff.textContent = "DIFF: -" + parseFloat((1 - data[0].price_usd / BTCData.ATHprice)).toFixed(2) + "%";
           chosenImg.src = BtcLogo;
           break;
         case 'ETH':
@@ -274,7 +303,7 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
           formAbbrev.textContent = "ETH";
           formPrice.textContent = "Price: $" + parseFloat(data[2].price_usd).toFixed(2);
           formAth.textContent = "ATH: $" + parseFloat(ETHData.ATHprice).toFixed(2);
-          formDiff.textContent = "DIFF:- " + parseFloat((1 - data[2].price_usd / ETHData.ATHprice)).toFixed(2) + "%";
+          formDiff.textContent = "DIFF: -" + parseFloat((1 - data[2].price_usd / ETHData.ATHprice)).toFixed(2) + "%";
           chosenImg.src = EthLogo;
           break;
         case 'DOT':
@@ -282,7 +311,7 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
           formAbbrev.textContent = "DOT";
           formPrice.textContent = "Price: $" + parseFloat(data[4].price_usd).toFixed(2);
           formAth.textContent = "ATH: $" + parseFloat(DOTData.ATHprice).toFixed(2);
-          formDiff.textContent = "DIFF: - " + parseFloat((1 - data[4].price_usd / DOTData.ATHprice)).toFixed(2) + "%";
+          formDiff.textContent = "DIFF: -" + parseFloat((1 - data[4].price_usd / DOTData.ATHprice)).toFixed(2) + "%";
           chosenImg.src = PolkaLogo;
           break;
         case 'USDT':
@@ -290,7 +319,7 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
           formAbbrev.textContent = "USDT";
           formPrice.textContent = "Price: $" + parseFloat(data[1].price_usd).toFixed(2);
           formAth.textContent = "ATH: $" + parseFloat(USDTData.ATHprice).toFixed(2);
-          formDiff.textContent = "DIFF: - " + parseFloat((1 - data[1].price_usd / USDTData.ATHprice)).toFixed(2) + "%";
+          formDiff.textContent = "DIFF: -" + parseFloat((1 - data[1].price_usd / USDTData.ATHprice)).toFixed(2) + "%";
           chosenImg.src = TetherLogo;
           break;
         case 'BNB':
@@ -298,7 +327,7 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
           formAbbrev.textContent = "BNB";
           formPrice.textContent = "Price: $" + parseFloat(data[3].price_usd).toFixed(2);
           formAth.textContent = "ATH: " + parseFloat(BNBData.ATHprice).toFixed(2);
-          formDiff.textContent = "DIFF: - " + parseFloat((1 - data[3].price_usd / BNBData.ATHprice)).toFixed(2) + "%";
+          formDiff.textContent = "DIFF: -" + parseFloat((1 - data[3].price_usd / BNBData.ATHprice)).toFixed(2) + "%";
           chosenImg.src = BinanceCoinLogo;
           break;
         case 'MATIC':
@@ -306,16 +335,15 @@ fetch('https://api.coingecko.com/api/v3/simple/supported_vs_currencies')
           formAbbrev.textContent = "MATIC";
           formPrice.textContent = "Price: $" + parseFloat(data[5].price_usd).toFixed(2);
           formAth.textContent = "ATH: $" + parseFloat(MATICData.ATHprice).toFixed(2);
-          formDiff.textContent = "DIFF: - " + parseFloat((1 - data[5].price_usd / MATICData.ATHprice)).toFixed(2) + "%";
+          formDiff.textContent = "DIFF: -" + parseFloat((1 - data[5].price_usd / MATICData.ATHprice)).toFixed(2) + "%";
           chosenImg.src = MaticLogo;
-          console.log(typeof BTCData.ATHprice);
           break;
         default:
           formName.textContent = "POLYGON";
           formAbbrev.textContent = "MATIC";
           formPrice.textContent = "Price: $" + parseFloat(data[5].price_usd).toFixed(2);
           formAth.textContent = "ATH: $" + parseFloat(MATICData.ATHprice).toFixed(2);
-          formDiff.textContent = "DIFF: - " + parseFloat((1 - data[5].price_usd / MATICData.ATHprice)).toFixed(2) + "%";
+          formDiff.textContent = "DIFF: -" + parseFloat((1 - data[5].price_usd / MATICData.ATHprice)).toFixed(2) + "%";
           chosenImg.src = MaticLogo;
       }
     } 

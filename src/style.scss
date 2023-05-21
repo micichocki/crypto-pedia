@@ -149,16 +149,18 @@ font-weight: 600;
 }
 
 main{
-  width:76%;
+  width:90%;
   padding-top: 30px;
   margin:0 auto;
   display:flex;
   .main-text{
     display: flex;
     flex-direction: column;
-    width:40%;
-    margin-right: 60px;   
+    width:36%;
+    margin-right: 6em;   
+    margin-left: 4em;
     .welcome-text{
+      text-align: center;
       font-size:3.5em;
       margin-bottom: 1px;
       .rocket{
@@ -168,7 +170,6 @@ main{
     
     .main-paragraph{
       text-align: center;
-      width:100%;
       font-size:1.2rem;
       margin-bottom:0.5em;
       line-height: 1.3em;
@@ -180,7 +181,7 @@ main{
 
     .main-button {
       display: block;
-      margin-left: 8.8em;
+      align-self: center;
       width: 5.6em;
       height: 3em;
       background-color: rgb(146, 50, 210);
@@ -193,13 +194,15 @@ main{
       text-decoration: none;
     }
     
-    .main-button:hover {
-      background-color: rgb(126, 40, 190);
-      cursor: pointer;
-    }
+  
     .main-button-text{
+      border:none;
       text-decoration: none;
+      background-color: rgb(146, 50, 210);
       color: rgb(236,240,239);
+    }
+    .main-button-text:hover{
+      cursor: pointer;
     }
     
   }
@@ -254,9 +257,7 @@ main{
             line-height: $height + px;
             height: $height + px;
             box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-            background: #fff;
-
-            
+            background: #fff;    
             margin: 0 5px 5px 0;
           }
     }
@@ -279,7 +280,7 @@ main{
   background-color: rgb(236,240,239);
   border-radius: 30px;
   height: 6em;
-  width:23em;
+  width:25em;
   .crypto-logo-form{
     width: 6rem;
     height:5.9rem;
@@ -292,12 +293,14 @@ main{
   } 
   
   .form-identif{
+    width:6.5em;
     margin-top: 1.7em;
-    margin-right: 1.2em; 
+    margin-right: 1.8em; 
     font-weight: bold;
     display:flex;
     flex-direction: column;
     .main-name{
+      width:6.5em;
       display: block;
     }
     
@@ -305,9 +308,9 @@ main{
   .form-stats{
     font-size: 0.9em;
     margin-top: 1.2em;
-    width: 7em;
+    width: 8em;
     height:3.9em;
-    padding-left:1.4em;
+    padding-left:0.5em;
     display:flex;
     flex-direction: column;
     gap:4px;
@@ -409,11 +412,7 @@ main{
       }  
     }
   }
-  /*
-.card-hover-effect{
-  transition: box-shadow 0.2s ease-in-out;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-}*/
+
   
   .btc:hover{
     border:2px solid $bg-color1; 
@@ -459,8 +458,21 @@ main{
       color:$button-color2;      
       border-radius:7px;
     }
-    bolder-table-cell{
+    .bolder-table-cell{
       font-weight: bolder;
+     
     }
+  }
+  .table-img{
+    width:1.5em;
+    height:1.5em;
+    position:relative;
+    top:.1em;
+    right: .2em;
+  }
+  .name-cell{
+    position:relative;
+    bottom:.35em;
+    left: .2em;
   }
 
